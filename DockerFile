@@ -1,0 +1,6 @@
+FROM node:10
+WORKDIR /app
+COPY . ./
+ENV EMAILURL=http://docker.for.mac.host.internal:7000/api/email QUEUEURI=http://docker.for.mac.host.internal:7000/api/queue
+RUN npm install
+CMD ["node", "serverWorkers.js"]
